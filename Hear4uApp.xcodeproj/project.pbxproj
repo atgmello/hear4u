@@ -15,9 +15,9 @@
 		3F8F4DB1232BF60C000CC853 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4DB0232BF60C000CC853 /* Audio.swift */; };
 		3F8F4DBB232C1C5D000CC853 /* CelulaDeAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4DBA232C1C5D000CC853 /* CelulaDeAudio.swift */; };
 		3FA487C32331450C003925F1 /* AdicionarSomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA487C22331450C003925F1 /* AdicionarSomViewController.swift */; };
+		3FA487C523315CDC003925F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FA487C423315CDC003925F1 /* GoogleService-Info.plist */; };
 		3FF8BBF5232FF9C200506A9A /* EdicaoTelaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8BBF4232FF9C200506A9A /* EdicaoTelaViewController.swift */; };
 		3FF8BBF8232FFE3A00506A9A /* AppSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8BBF7232FFE3A00506A9A /* AppSingleton.swift */; };
-		3FF8BBFA23300AE500506A9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FF8BBF923300AE500506A9A /* GoogleService-Info.plist */; };
 		3FF8BBFC2330180200506A9A /* AlertaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8BBFB2330180200506A9A /* AlertaViewController.swift */; };
 		74F6D90475C4A926CC601825 /* Pods_Hear4uApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE13B344094C8C5CFCFF087C /* Pods_Hear4uApp.framework */; };
 /* End PBXBuildFile section */
@@ -33,9 +33,9 @@
 		3F8F4DB0232BF60C000CC853 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		3F8F4DBA232C1C5D000CC853 /* CelulaDeAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelulaDeAudio.swift; sourceTree = "<group>"; };
 		3FA487C22331450C003925F1 /* AdicionarSomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarSomViewController.swift; sourceTree = "<group>"; };
+		3FA487C423315CDC003925F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FF8BBF4232FF9C200506A9A /* EdicaoTelaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdicaoTelaViewController.swift; sourceTree = "<group>"; };
 		3FF8BBF7232FFE3A00506A9A /* AppSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSingleton.swift; sourceTree = "<group>"; };
-		3FF8BBF923300AE500506A9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FF8BBFB2330180200506A9A /* AlertaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertaViewController.swift; sourceTree = "<group>"; };
 		6741CD31BEBD9B0D7DA771BD /* Pods-Hear4uApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hear4uApp.debug.xcconfig"; path = "Target Support Files/Pods-Hear4uApp/Pods-Hear4uApp.debug.xcconfig"; sourceTree = "<group>"; };
 		98A97A9776F679165285356A /* Pods-Hear4uApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hear4uApp.release.xcconfig"; path = "Target Support Files/Pods-Hear4uApp/Pods-Hear4uApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +76,7 @@
 		3F0C8B69232AB87F009E51CB /* Hear4uApp */ = {
 			isa = PBXGroup;
 			children = (
+				3FA487C423315CDC003925F1 /* GoogleService-Info.plist */,
 				3F0C8B6A232AB880009E51CB /* AppDelegate.swift */,
 				3FF8BBF6232FFE1400506A9A /* Singletons */,
 				3F8F4DAF232BF555000CC853 /* View */,
@@ -84,7 +85,6 @@
 				3F0C8B6C232AB880009E51CB /* ViewController.swift */,
 				3F0C8B6E232AB880009E51CB /* Main.storyboard */,
 				3F0C8B71232AB881009E51CB /* Assets.xcassets */,
-				3FF8BBF923300AE500506A9A /* GoogleService-Info.plist */,
 				3F0C8B73232AB881009E51CB /* LaunchScreen.storyboard */,
 				3F0C8B76232AB881009E51CB /* Info.plist */,
 			);
@@ -203,7 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F0C8B75232AB881009E51CB /* LaunchScreen.storyboard in Resources */,
-				3FF8BBFA23300AE500506A9A /* GoogleService-Info.plist in Resources */,
+				3FA487C523315CDC003925F1 /* GoogleService-Info.plist in Resources */,
 				3F0C8B72232AB881009E51CB /* Assets.xcassets in Resources */,
 				3F0C8B70232AB880009E51CB /* Main.storyboard in Resources */,
 			);

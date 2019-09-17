@@ -12,6 +12,9 @@ import FirebaseDatabase
 
 class EdicaoTelaViewController: UIViewController {
     
+    var audioEdicao: Audio?
+    
+    
     @IBOutlet weak var NomeTextField: UITextField!
     
     @IBOutlet weak var LabelTesteUILabel: UILabel!
@@ -24,8 +27,6 @@ class EdicaoTelaViewController: UIViewController {
  
     @IBAction func EditarButton(_ sender: Any) {
         
-        var audioEdicao: Audio?
-        
         let alerta = AlertaTextField.text
         
         let nome = NomeTextField.text
@@ -34,9 +35,14 @@ class EdicaoTelaViewController: UIViewController {
         
         if let safeAudio = audioEdicao, let safeAlerta = alerta, let safeName = nome  {
             
-            let updates = ["Audios/\(safeAudio.nome)/alerta": "\(safeAlerta)", "Audios/\(safeAudio.nome)/nome": "\(safeName)" ]
-            ref.updateChildValues(updates)
+            let safeCaminho = safeAudio.nome
             
+            
+            let updates = ["Audios/\(safeCaminho)/alerta": "\(safeAlerta)", "Audios/\(safeCaminho)/nome": "\(safeName)" ]
+            
+            
+            ref.updateChildValues(updates)
+
         }
     }
     

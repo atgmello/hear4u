@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ViewController: UIViewController {
 
@@ -65,6 +66,10 @@ extension ViewController: UITableViewDataSource{
         
         if let audioCell = cell as? CelulaDeAudio {
             
+            let ref = Database.database().reference()
+            
+            //ref.child("Audios)
+            
             let audios2 = audios[indexPath.row]
             
             audioCell.NomeDoAudio.text = audios2.nome
@@ -73,11 +78,13 @@ extension ViewController: UITableViewDataSource{
       
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "telaedicao", sender: audios[indexPath.row] )
     }
     
-     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             audios.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -86,6 +93,21 @@ extension ViewController: UITableViewDataSource{
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
+
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "telaedicao" {
+            
+            if let EdicaoTela = segue.destination as? EdicaoTelaViewController{
+                
+                if let audioEdicao = sender as? Audio {
+                    
+                    EdicaoTela.audioEdicao = audioEdicao
+                    
+                    }
+                }
+        }
+    }
+
 }
 
 

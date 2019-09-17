@@ -160,7 +160,7 @@
                     <connections>
                         <outlet property="SeVazioAviso" destination="qxj-jf-hrs" id="iSo-BA-kn6"/>
                         <outlet property="TabelaUITable" destination="af8-Oy-35B" id="MwT-bf-zZ9"/>
-                        <segue destination="nGq-0Z-0eL" kind="push" identifier="telaedicao" id="4B3-8r-bE3"/>
+                        <segue destination="nGq-0Z-0eL" kind="show" identifier="telaedicao" id="4B3-8r-bE3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NV-N5-oFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
