@@ -20,12 +20,19 @@ class AdicionarSomViewController: UIViewController {
 
     @IBAction func AdicionarAudio(_ sender: UIButton) {
         
-        let novoNome = NomeDoAudio.text
+        let alerta = AlertaDoSom.text
         
-        let novoAlerta = AlertaDoSom.text
+        let nome = NomeDoAudio.text
         
         let ref = Database.database().reference()
-
+        
+        if let safeNome = nome, let safealerta = alerta{
+            
+            ref.child("Audios/\(safeNome)/alerta").setValue("\(safealerta)" )
+            ref.child("Audios/\(safeNome)/nome").setValue("\(safeNome)" )
+            
+        }
+        
         
 }
     
