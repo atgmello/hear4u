@@ -1,0 +1,6 @@
+framework module Pods_Hear4uApp {
+  umbrella header "Pods-Hear4uApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

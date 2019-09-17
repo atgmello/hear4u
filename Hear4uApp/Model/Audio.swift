@@ -22,3 +22,8 @@ class Audio {
     
     
 }
+
+class AudioDAO {
+    
+    
+}
