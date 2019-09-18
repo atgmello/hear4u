@@ -13,7 +13,7 @@
         <!--Item 2-->
         <scene sceneID="BL1-K2-h6M">
             <objects>
-                <viewController id="JqK-kj-Xkj" sceneMemberID="viewController">
+                <viewController id="JqK-kj-Xkj" customClass="RecordViewController" customModule="Hear4uApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hQZ-ca-gbw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,29 +26,48 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J49-6U-KDv">
-                                <rect key="frame" x="159" y="210" width="97" height="30"/>
+                                <rect key="frame" x="20" y="142" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7w-JU-2uc">
-                                <rect key="frame" x="159" y="363" width="97" height="117"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alerta" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cKy-Nh-GKk">
+                                <rect key="frame" x="20" y="218" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-sF-WCD">
+                                <rect key="frame" x="20" y="452" width="374" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRC-gS-xAz">
+                                <rect key="frame" x="144" y="347" width="126" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alerta" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cKy-Nh-GKk">
-                                <rect key="frame" x="159" y="593" width="97" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CO-SH-Fpz">
+                                <rect key="frame" x="144" y="546" width="126" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iKw-UW-1qP"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="PNb-Jy-KUH"/>
+                    <connections>
+                        <outlet property="messageTextField" destination="cKy-Nh-GKk" id="ejb-xS-RaV"/>
+                        <outlet property="nameTextField" destination="J49-6U-KDv" id="Jvc-Ak-0aM"/>
+                        <outlet property="playButton" destination="8CO-SH-Fpz" id="Xy3-Kn-pd7"/>
+                        <outlet property="recordButton" destination="kRC-gS-xAz" id="zss-6g-BkJ"/>
+                        <outlet property="statusLabel" destination="bsL-sF-WCD" id="NbA-xb-zSY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0M-ZP-nSN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,7 +165,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Oam-8b-Eed">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7UZ-vW-Wl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="csb-3d-2oa" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xu4-PC-11z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -158,6 +176,7 @@
                         <segue destination="JqK-kj-Xkj" kind="relationship" relationship="viewControllers" id="EGb-da-DZF"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7UZ-vW-Wl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="269" y="-194"/>
         </scene>

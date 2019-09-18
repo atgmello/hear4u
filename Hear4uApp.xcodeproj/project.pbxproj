@@ -12,6 +12,7 @@
 		3F0C8B70232AB880009E51CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0C8B6E232AB880009E51CB /* Main.storyboard */; };
 		3F0C8B72232AB881009E51CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0C8B71232AB881009E51CB /* Assets.xcassets */; };
 		3F0C8B75232AB881009E51CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0C8B73232AB881009E51CB /* LaunchScreen.storyboard */; };
+		3F8901EC232C0A4000C3A4EC /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8901EB232C0A4000C3A4EC /* RecordViewController.swift */; };
 		3F8F4DB1232BF60C000CC853 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4DB0232BF60C000CC853 /* Audio.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		3F0C8B71232AB881009E51CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F0C8B74232AB881009E51CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F0C8B76232AB881009E51CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F8901EB232C0A4000C3A4EC /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = SOURCE_ROOT; };
 		3F8F4DB0232BF60C000CC853 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 		3F8F4DAD232BF538000CC853 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3F8901EB232C0A4000C3A4EC /* RecordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				3F8F4DB1232BF60C000CC853 /* Audio.swift in Sources */,
 				3F0C8B6D232AB880009E51CB /* ViewController.swift in Sources */,
 				3F0C8B6B232AB880009E51CB /* AppDelegate.swift in Sources */,
+				3F8901EC232C0A4000C3A4EC /* RecordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +315,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7F9GKTBLFR;
 				INFOPLIST_FILE = Hear4uApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,7 +334,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7F9GKTBLFR;
 				INFOPLIST_FILE = Hear4uApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
