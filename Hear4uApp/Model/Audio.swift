@@ -7,16 +7,17 @@
 //
 
 import Foundation
+
 class Audio {
     
     let nome:String
-    let arquivo_de_audio:String
+    let arquivodeaudio:String
     let alerta:String
     
     
-    init(nome:String, arquivo_de_audio:String, alerta:String) {
+    init(nome:String, arquivodeaudio:String, alerta:String) {
         self.nome = nome
-        self.arquivo_de_audio = arquivo_de_audio
+        self.arquivodeaudio = arquivodeaudio
         self.alerta = alerta
     }
     

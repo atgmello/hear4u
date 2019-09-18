@@ -8,39 +8,59 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
+import FirebaseAuth
+
 
 class ViewController: UIViewController {
 
     var audios = [Audio]()
     
+    var ref:DatabaseReference!
     
     @IBOutlet weak var SeVazioAviso: UIView!
     
     @IBOutlet weak var TabelaUITable: UITableView!
     
+    /*override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        LoadAudios()
+    }*/
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        verifyTableEmpty()
+        LoadAudios()
+    }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+       
+    
         
         TabelaUITable.delegate = self
         TabelaUITable.dataSource = self
         
-        audios = AppSingleton.shared.getDAOAudiosList()
         
+        
+        }
+    
+    func verifyTableEmpty() {
         if audios.isEmpty {
-            TabelaUITable.isHidden = true
-            SeVazioAviso.isHidden = false
-        
-        } else {
+                TabelaUITable.isHidden = true
+                SeVazioAviso.isHidden = false
+                
+            }
+        else {
             TabelaUITable.isHidden = false
             SeVazioAviso.isHidden = true
             
         }
-        
-        
-        
     }
     
 }
+
+
 
 
 
@@ -65,12 +85,11 @@ extension ViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
         
         if let audioCell = cell as? CelulaDeAudio {
-            
-            let ref = Database.database().reference()
-            
-            //ref.child("Audios)
+        
             
             let audios2 = audios[indexPath.row]
+            
+            print("nome: \(audios2.nome)")
             
             audioCell.NomeDoAudio.text = audios2.nome
         
@@ -108,6 +127,44 @@ extension ViewController: UITableViewDataSource{
         }
     }
 
+    func LoadAudios() {
+        
+        
+        ref = Database.database().reference()
+        
+        ref.child("Audios").observe(.value, with: { (snapshot) in
+            
+            self.audios.removeAll()
+            
+            
+            let results = snapshot.value as? [String : AnyObject]
+            
+            if let results = results {
+                
+                for (_ , value) in results {
+                    
+                    if let alertaValue = value["alerta"] as? String, let fileValue = value["arquivodeaudio"] as? String, let nameValue = value["nome"] as? String {
+                        
+                        print (nameValue)
+                        print (fileValue)
+                        print (alertaValue)
+                        
+                        let audio = Audio(nome: nameValue, arquivodeaudio: fileValue, alerta: alertaValue)
+                        
+                        self.audios.append(audio)
+                        
+                        print(self.audios)
+                    }
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.TabelaUITable.reloadData()
+                self.verifyTableEmpty()
+            }
+        })
+    }
 }
+
 
 

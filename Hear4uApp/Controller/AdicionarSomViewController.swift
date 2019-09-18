@@ -17,20 +17,25 @@ class AdicionarSomViewController: UIViewController {
     @IBOutlet weak var AlertaDoSom: UITextField!
     
     
-
+    @IBOutlet weak var ArquivoDeAudio: UITextField!
+    
     @IBAction func AdicionarAudio(_ sender: UIButton) {
         
-        let alerta = AlertaDoSom.text
         
-        let nome = NomeDoAudio.text
+        let arquivoDeAudio = ArquivoDeAudio.text
+        
+        let alerta_edicao = AlertaDoSom.text
+        
+        let nome_edicao = NomeDoAudio.text
         
         let ref = Database.database().reference()
         
-        if let safeNome = nome, let safealerta = alerta{
+        if let safeNome = nome_edicao, let safealerta = alerta_edicao, let safeArquivo = arquivoDeAudio{
             
             ref.child("Audios/\(safeNome)/alerta").setValue("\(safealerta)" )
             ref.child("Audios/\(safeNome)/nome").setValue("\(safeNome)" )
             
+            ref.child("Audios/\(safeNome)/arquivodeaudio").setValue("\(safeArquivo)" )
         }
         
         
