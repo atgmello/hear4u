@@ -89,7 +89,7 @@ extension ViewController: UITableViewDataSource{
             
             let audios2 = audios[indexPath.row]
             
-            print("nome: \(audios2.nome)")
+            //print("nome: \(audios2.nome)")
             
             audioCell.NomeDoAudio.text = audios2.nome
         
@@ -145,15 +145,15 @@ extension ViewController: UITableViewDataSource{
                     
                     if let alertaValue = value["alerta"] as? String, let fileValue = value["arquivodeaudio"] as? String, let nameValue = value["nome"] as? String {
                         
-                        print (nameValue)
-                        print (fileValue)
-                        print (alertaValue)
+                        //print (nameValue)
+                        //print (fileValue)
+                        //print (alertaValue)
                         
                         let audio = Audio(nome: nameValue, arquivodeaudio: fileValue, alerta: alertaValue)
                         
                         self.audios.append(audio)
                         
-                        print(self.audios)
+                        //print(self.audios)
                     }
                 }
             }

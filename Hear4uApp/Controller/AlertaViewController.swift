@@ -17,17 +17,21 @@ class AlertaViewController: UIViewController {
         let ref = Database.database().reference()
         //ref.child("someid/name").setValue("Testes")
         
-        ref.child("someid").observe(.value) {
-            (snapshot) in
-            let employeeData = snapshot.value as? [String: String]
-            print (employeeData)
-            if let data = employeeData {
-                self.alert(data["name"]!)
+        ref.child("Alerta/Campainha").observe(.value, with: { (snapshot) in
+            let employeeData = snapshot.value as? [String: AnyObject]
+            if let employeeData = employeeData {
+            
+            if let data = employeeData["mensagem"] as? String {
+                self.alert(data)
+                //print(data)
+                }
             }
-        }
+        })
     }
+
     
     func alert(_ data: String) {
+        
         let alert = UIAlertController(title: "Mensagem", message: data,         preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
@@ -36,17 +40,5 @@ class AlertaViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
-        // Do any additional setup after loading the view.
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
